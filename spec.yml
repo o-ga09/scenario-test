@@ -1,0 +1,21 @@
+openapi: 3.0.0
+servers:
+  - url: https://m8owayfzfd.execute-api.ap-northeast-1.amazonaws.com/dev
+info:
+  title: go-lambda-api
+  version: 1.0.0
+paths:
+  /eventtest:
+    get:
+      security:
+        - aws_iam: []
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+                format: 最大文字数１０文字
+                example:
+                  message: Hello, world!

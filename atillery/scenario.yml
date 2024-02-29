@@ -1,0 +1,21 @@
+config:
+  target: "https://your-api-url.com"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+      rampUp: 10
+      name: "ramp-up"
+    - duration: 120
+      arrivalRate: 50
+      name: "steady-state"
+    - duration: 60
+      arrivalRate: 10
+      rampDown: 10
+      name: "ramp-down"
+  scenarios:
+    - name: "Get Event"
+      flow:
+        - get:
+            url: "/eventtest"
+            headers:
+              Authorization: "Bearer YOUR_ACCESS_TOKEN"

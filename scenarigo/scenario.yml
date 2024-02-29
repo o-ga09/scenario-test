@@ -1,0 +1,14 @@
+title: scenarigo test
+plugins:
+  plugin.so:
+    src: ./gen/plugin.so
+steps:
+  - title: GET event
+    protocol: http
+    request:
+      method: GET
+      url: "https://m8owayfzfd.execute-api.ap-northeast-1.amazonaws.com/dev/eventtest"
+    expect:
+      code: 200
+      body:
+        Message: null

@@ -1,0 +1,19 @@
+version: "1.0"
+name: go-lambda-api
+config:
+  http:
+    baseURL: https://m8owayfzfd.execute-api.ap-northeast-1.amazonaws.com/dev
+tests:
+  default:
+    name: Default
+    steps:
+      - http:
+          url: /eventtest
+          method: GET
+          check:
+            status: 200
+            schema:
+              type: string
+              format: 最大文字数１０文字
+              example:
+                message: Hello, world!
