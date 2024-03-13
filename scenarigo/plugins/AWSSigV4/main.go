@@ -16,8 +16,9 @@ func init() {
 }
 
 func AWSSigV4() (X_Amz_Date, Authorization string) {
+	profileName := "default"
 	// AWS認証情報
-	creds := credentials.NewStaticCredentials("", "", "")
+	creds := credentials.NewSharedCredentials("/Users/taichi/.aws/credentials", profileName)
 
 	// サービス名とリージョン
 	service := "execute-api"
