@@ -3,9 +3,11 @@ module plugins/plugin
 go 1.22.0
 
 require (
-	github.com/google/uuid v1.6.0
+	github.com/aws/aws-sdk-go v1.50.37
 	github.com/zoncoen/scenarigo v0.17.1
 )
+
+require gopkg.in/yaml.v2 v2.4.0 // indirect
 
 require (
 	carvel.dev/ytt v0.48.0 // indirect
@@ -15,6 +17,7 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hashicorp/go-version v1.6.0 // indirect
+	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/k14s/starlark-go v0.0.0-20200720175618-3a5c849cc368 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect

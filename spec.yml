@@ -15,7 +15,16 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: 最大文字数１０文字
-                example:
-                  message: Hello, world!
+                $ref: "#/components/schemas/msg"
+              example: 
+                msg: 000000000000000
+components:
+  schemas:
+    msg:
+      type: string
+      format: 半角英数字100文字
+      maxLength: 100
+      description: ステータスメッセージです。
+      example: 
+        message: 000000000000000
+

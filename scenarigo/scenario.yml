@@ -1,14 +1,22 @@
 title: scenarigo test
 plugins:
-  plugin.so:
-    src: ./gen/plugin.so
+  test: plugin.so
 steps:
-  - title: GET event
+  - id: test001
+    title: GET event
     protocol: http
     request:
       method: GET
       url: "https://m8owayfzfd.execute-api.ap-northeast-1.amazonaws.com/dev/eventtest"
+      header:
+        X-Amz-Date: '{{ vars.X-Amz-Date }}'
+        Authorization: '{{ vars.Authorization }}'
     expect:
       code: 200
       body:
-        Message: null
+        count: "100"
+        limit: "1"
+        offset: "10"
+        user:
+          Age: "29"
+          Name: test
